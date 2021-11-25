@@ -1,3 +1,4 @@
 p.note::before {
-	content: url("info.ico")
+	content: url("info.ico");
+	margin-right: 8px;
 }
