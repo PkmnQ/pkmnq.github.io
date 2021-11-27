@@ -10,13 +10,12 @@ function seq(ord) {
 function encode() {
 	entext = document.getElementById("input");
 	detext = document.getElementById("output");
-	post = entext.value;
+	post = entext.value
 
 	detext.value = "";
 
-	for (let i = 0; i < post.length; i++) {
-		ord = post.codePointAt(i);
-		chr = String.fromCodePoint(ord);
+	for (chr of [...post]) {
+		ord = chr.codePointAt(0);
 		if (ord > 0xffff) {
 			detext.value += seq(ord);
 		} else if (0x7c0 <= ord && ord <= 0x7e0 || chr == esch) {
